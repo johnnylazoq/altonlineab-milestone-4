@@ -31,3 +31,25 @@ def list_products(cursor, dept_id):
         WHERE dept_id = ?
     """, (dept_id,))
     return cursor.fetchall()
+
+def get_product(cursor, product_id):
+    """
+    Retrieves product title and current discount.
+    """
+    cursor.execute("""
+        SELECT title, current_discount
+        FROM Product
+        WHERE product_id = ?
+    """, (product_id,))
+    return cursor.fetchone()
+
+def update_discount(cursor, product_id, new_discount):
+    """
+    Updates the discount for a product.
+    """
+    cursor.execute("""
+        UPDATE Product
+        SET current_discount = ?
+        WHERE product_id = ?
+    """, (new_discount, product_id))
+
