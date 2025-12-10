@@ -8,7 +8,6 @@ This project contains Python tools for interacting with the AltOnline AB MimerSQ
 ## Prerequisites
 
 - Python 3.8 or higher
-- [Poetry](https://python-poetry.org/) for dependency management
 - MimerSQL client libraries (specifically `libmimerapi.so` must be available on your system)
 
 ## Installation
@@ -20,16 +19,17 @@ This project contains Python tools for interacting with the AltOnline AB MimerSQ
    cd altonlineab-milestone-4
    ```
 
-2. **Install dependencies:**
+2. **Create a virtual environment (optional but recommended):**
 
    ```bash
-   poetry install
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use .venv\Scripts\activate
    ```
 
-3. **Activate the virtual environment:**
+3. **Install dependencies:**
 
    ```bash
-   poetry shell
+   pip install -r requirements.txt
    ```
 
 ## Configuration
@@ -73,7 +73,7 @@ python main.py
 │   ├── database.py         # Database connection logic
 │   └── operations.py       # SQL queries and business logic
 ├── .env                    # Environment variables (credentials)
-├── pyproject.toml          # Poetry configuration and dependencies
+├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
 ```
 
